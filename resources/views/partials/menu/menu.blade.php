@@ -38,10 +38,11 @@
             <button class="btn btn-light my-2 my-sm-0" type="submit">Поиск</button>
         </form>--}}
 
-        <a type="button" class="btn btn-light">
-            <span>Name Surname</span>
+        <div class="btn btn-light">
+            <span>{{ \Illuminate\Support\Facades\Auth::user()->getFullName() }}</span>
             <span class="badge badge-primary ml-1">9</span>
             <span class="sr-only">unread messages</span>
-        </a>
+            <a href="{{ route('logout', [ 'backUri' => url()->full() ]) }}" class="link-secondary">Выйти</a>
+        </div>
     </div>
 </nav>

@@ -2,7 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\AuthController;
+use Closure;
+use http\Env\Request;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Illuminate\Support\Facades\Auth;
 
 class Authenticate extends Middleware
 {
@@ -17,5 +21,15 @@ class Authenticate extends Middleware
         if (! $request->expectsJson()) {
             return route('login');
         }
+    }
+
+    public function handle($request, Closure $next, ...$guards)
+    {
+        if (!Auth::check())
+        {
+            return redirect(route('login', [ 'backUri' => $request->getRequestUri() ]));
+        }
+
+        return $next($request);
     }
 }

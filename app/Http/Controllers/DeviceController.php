@@ -13,7 +13,7 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        return 'List of devices!';
+        return view('pages.devices.index');
     }
 
     /**
