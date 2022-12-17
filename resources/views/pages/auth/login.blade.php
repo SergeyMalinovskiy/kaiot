@@ -3,6 +3,16 @@
 @section('content')
     <div class="w-100 h-100 d-flex align-items-center justify-content-center">
         <div class="w-25 d-flex flex-column bg-light p-5 border border-secondary rounded">
+
+            @foreach($errors as $error)
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{$error}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endforeach
+
             <div class="d-flex justify-content-center mb-2">
                 <img src="{{ asset('images/logo200x200.png') }}" style="height: 100px; padding-right: 10px;" class="rounded float-left" alt="{{ env('APP_NAME') }}">
             </div>
