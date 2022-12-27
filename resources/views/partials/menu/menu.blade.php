@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
     <a class="navbar-brand d-flex align-items-center" href="{{ route('home') }}">
         <img src="{{ asset('images/logo200x200.png') }}" style="height: 40px; padding-right: 10px;" class="rounded float-left" alt="{{ env('APP_NAME') }}">
@@ -29,6 +29,10 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('settings') }}">Настройки</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('users.index') }}">Пользователи</a>
             </li>
 
         </ul>

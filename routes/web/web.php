@@ -42,3 +42,8 @@ Route::prefix('settings')->group(function () {
     Route::get('/', function () { return 'Settings page!'; })->name('settings');
 });
 
+/**
+ * Пользователи
+ */
+Route::resource('users', \App\Http\Controllers\UsersController::class);
+

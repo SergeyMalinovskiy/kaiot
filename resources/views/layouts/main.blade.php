@@ -13,10 +13,12 @@
 
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
     @include('partials.menu.menu')
 
+    <div class="px-3">
     @yield('content', 'Template not provided')
+    </div>
 
     <footer class="container">
         <p>© {{ env('APP_NAME') }} 2022</p>
